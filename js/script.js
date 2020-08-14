@@ -5,13 +5,13 @@ let isNumber = function (n) {
 
 function quessNumber() {
 
-  let randomNumber = Math.floor(Math.random() * 100) + 1;
-  let count = 10;
+  let number = Math.floor(Math.random() * 100) + 1;
+  let col = 10;
 
-  function bot(randomNumber, count) {
+  function bot() {
     let userNumber = prompt('Угадай число от 1 до 100');
 
-    if (count <= 0) {
+    if (col <= 0) {
       alert('Попытки закончились!');
       if (confirm('Хотите сыграть еще!')) {
         quessNumber();
@@ -26,17 +26,17 @@ function quessNumber() {
     } 
     else if(!isNumber(userNumber)){
     alert('Введите число!');
-    bot(randomNumber, count);
+      bot(number, col);
     } 
-    else if(randomNumber < userNumber){
-    count--;
-    alert('Загаданное число меньше, осталось: ' + count + ' попыток');
-    bot(randomNumber, count);
+    else if(number < userNumber){
+      col--;
+      alert('Загаданное число меньше, осталось: ' + col + ' попыток');
+      bot(number, col);
     }
-    else if(randomNumber > userNumber){
-    count--;
-    alert('Загаданное число больше, осталось: ' + count + ' попыток');
-    bot(randomNumber, count);
+    else if(number > userNumber){
+      col--;
+      alert('Загаданное число больше, осталось: ' + col + ' попыток');
+      bot(number, col);
     } else {
       alert('Поздравляю, вы угадали!!!');
       if (confirm('Хотите сыграть еще?')) {
@@ -47,7 +47,7 @@ function quessNumber() {
       }
     }
   }
-  return bot(randomNumber, count);
+  return bot();
 }
 
 quessNumber();
