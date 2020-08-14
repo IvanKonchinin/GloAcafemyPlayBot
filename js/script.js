@@ -26,17 +26,17 @@ function quessNumber() {
     } 
     else if(!isNumber(userNumber)){
     alert('Введите число!');
-      bot(number, col);
+      bot();
     } 
     else if(number < userNumber){
       col--;
       alert('Загаданное число меньше, осталось: ' + col + ' попыток');
-      bot(number, col);
+      bot();
     }
     else if(number > userNumber){
       col--;
       alert('Загаданное число больше, осталось: ' + col + ' попыток');
-      bot(number, col);
+      bot();
     } else {
       alert('Поздравляю, вы угадали!!!');
       if (confirm('Хотите сыграть еще?')) {
